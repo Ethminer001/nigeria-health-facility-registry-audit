@@ -1,0 +1,9 @@
+reconciliation_code,record_count,pct_of_all_7253_records,explanation
+HS0_DUPLICATE_OSM_ID_EXPORT_ROW,2,0.03%,Exact same OpenStreetMap node ID and coordinates exported twice in healthsites_nigeria_2026.csv.
+HS1_MISSING_COORDINATES_WAY_POLYGON,2972,40.98%,"100% of these 2,972 rows are OpenStreetMap building outlines (osm_type='way') exported to CSV without computing an (X, Y) center point."
+HS2_COMMUNITY_PHARMACY_OUT_OF_GRID3_SCOPE,1438,19.83%,"Geocoded community/retail pharmacies (amenity='pharmacy'), which are not tracked in the GRID3 clinical facility master list."
+HS3_PROBABLE_MATCH_IN_GRID3_MASTER,1961,27.04%,"Named, geocoded clinical facility in Healthsites 2026 that probably matches an existing GRID3 facility: name similarity >= 0.60 within 1 km, or >= 0.40 within 150 m. The name test ignores generic words such as clinic and hospital, so facility type is not compared. See match_confidence in the register."
+HS4_CO_LOCATED_<=250M_DIFFERENT_NAME,343,4.73%,"Named clinical facility sitting within <=250m of a GRID3 facility, but with a different name (renamed clinic, specialist unit, or adjacent private clinic)."
+HS5_UNNAMED_POINT_NEAR_GRID3_CLINIC_<=300M,104,1.43%,Unnamed clinical pin (name is blank) located within <=300m of an existing named GRID3 facility.
+HS6_UNNAMED_UNVERIFIED_CLINICAL_POINT_>300M,49,0.68%,Unnamed clinical pin (name is blank) located >300m from any GRID3 facility.
+HS7_NEWLY_MAPPED_NAMED_CLINIC_NOT_IN_GRID3,384,5.29%,"Named, geocoded hospital, clinic, or doctor practice in the Sept 2026 Healthsites registry sitting >250m from any facility in the June 2024 GRID3 release (it may already be in a later GRID3 version)."

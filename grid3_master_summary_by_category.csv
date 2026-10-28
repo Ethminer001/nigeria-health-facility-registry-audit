@@ -1,0 +1,11 @@
+category_code,facility_count,pct_of_all_46146_facilities,root_cause
+G1_BORNO_TYPE_COLUMN_SHIFT_BUG,38,0.082%,Borno State upload typed facility category ('Primary Health Clinic'/'Health Post Dispensary') or 'Unknown' into the 'type' column instead of Primary/Secondary/Tertiary.
+G2_EXACT_GPS_TRUE_DUPLICATE_CLINIC,2,0.004%,Same clinic in Getso Ward (Kano) imported twice at the exact same 5-decimal GPS point from two feeds (eHA Polio and EU SRIK).
+G3_EXACT_GPS_STACKED_WARD_COORDINATES,11,0.024%,11 distinct clinics across 5 Wards share identical copied 5-decimal GPS coordinates because individual clinic coordinates were missing.
+G4_SAME_WARD_IDENTICAL_NAME_DUPLICATE,68,0.147%,Facilities sharing the exact same primary name inside the same Ward (82% caused by merging two source feeds without deduplicating).
+G5_SAME_WARD_FUZZY_NAME_DUPLICATE_<=100M,504,1.092%,Facilities in the same Ward sitting within <=100 meters of each other with high fuzzy name similarity (>=0.65) across different spellings/sources.
+G6_INTERNAL_XY_LONLAT_DRIFT_>10M,163,0.353%,"Row's geometry columns (X, Y) differ from its attribute columns (longitude, latitude) by >10m (up to 2.29 km) after map pin edits."
+G7_UNVERIFIED_STATUS_AND_OWNERSHIP_BOTH,5071,10.989%,Both functional status ('Unknown') and ownership ('Others') are unverified (98.5% from legacy eHA Polio & OSGOF mapping feeds).
+G8_UNVERIFIED_FUNCTIONAL_STATUS_ONLY,6513,14.114%,"Ownership is recorded, but functional status is 'Unknown' (primarily from eHA Polio & OSGOF geographic mapping feeds)."
+G9_UNVERIFIED_OWNERSHIP_ONLY,4639,10.053%,"Functional status is recorded, but facility ownership is listed as generic 'Others' (primarily from eHA Polio & OSGOF feeds)."
+G10_CLEAN_COMPLETE_MASTER_FACILITY,29137,63.141%,"Facility has valid Primary/Secondary/Tertiary level, recorded functional status, known ownership, consistent GPS coordinates, and no ward duplicate flags."
